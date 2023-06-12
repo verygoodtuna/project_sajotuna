@@ -1,0 +1,27 @@
+
+
+
+
+.main_visual .v_img{
+    height: 100vh;
+}
+
+.main_visual .v_slide .v01 {
+    background: url(../imges/mv_01.jpg)no-repeat center center/cover;
+}
+
+.main_visual .v_slide .v02 {
+    background: url(../imges/mv_02.png)no-repeat center center/cover;
+}
+
+.main_visual .v_slide .v03 {
+    background: url(../imges/mv_03.gif)no-repeat center center/cover;
+}
+
+.main_visual .v_slide .v04 {
+    background: url(../imges/mv_04.jpg)no-repeat center center/cover;
+}
+
+.main_visual .v_slide .v05 {
+    background: url(../imges/mv_05.jpg)no-repeat center center/cover;
+}
