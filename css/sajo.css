@@ -7,8 +7,8 @@
 .header {
     position: relative;
     padding: 20px 0 20px 0;
-    /* height: 100px; */
     background: #fff;
+
 }
 
 .header img {
@@ -52,6 +52,7 @@
 .header .banner_b {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .header .banner_b ul{
@@ -60,20 +61,56 @@
     gap: 20px;
 }
 
-.header .banner_b ul>li:first-child {
-    position: relative;
+.header .banner_b ul>li:first-child a::before {
+    content: "\e91c";
+    font-family: xeicon;
     display: block;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
     width: 30px;
     height: 30px;
     background: #002e6a;
     border-radius: 50%;
+    color: #fff;
+
+    /* position: absolute;
+    top: 0;
+    left: 0; */
 }
 
-.header .banner_b ul>li:first-child .bar {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.header .banner_b ul>li:first-child a::after {
+    content: "\e921";
+    font-family: xeicon;
+    display: none;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    background: #002e6a;
+    border-radius: 50%;
+    color: #fff;
+
+}
+
+.header .banner_b ul>li:first-child a.on::before {
+    display: none;
+}
+
+.header .banner_b ul>li:first-child a.on::after {
+    display: block;
+}
+
+.header .banner_b .bar {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    align-items: center;
+    font-size: 20px;
+    background: #002e6a;
+    border-radius: 50%;
     color: #fff;
 }
 
@@ -118,16 +155,21 @@
 
 .header .lnb_con {
     display: flex;
-    flex: 1;
     position: absolute;
     padding: 50px 0;
     margin: 0 auto;
-    top: 100px;
+    bottom: 0;
     left: 0;
-    transform: translate(0, 50%);
+    transform: translate(0, 100%);
 
     background: #fff;
     width: 100%;
+
+    transition: 0.5s;
+}
+
+.header .lnb_con.on {
+    display: block;
 }
 
 .header .lnb_con .box {
@@ -136,7 +178,7 @@
     padding: 0 15px;
 
     display: flex;
-    flex: 1;
+    justify-content: space-around;
 }
 
 .header .lnb_con .left {
@@ -146,7 +188,7 @@
 .header .lnb_con .left .tuna,
 .header .lnb_con .left .laver,
 .header .lnb_con .left .plan {
-    margin: 0 60px 0 0;
+    margin: 0 50px 0 0;
 }
 
 .header .lnb_con .left .t h2{
@@ -155,23 +197,21 @@
     margin: 0 0 20px 0;
 }
 
-.header .lnb_con .left .t ul>li {
+.header .lnb_con .left .t ul>li:not(:last-child) {
     font-size: 16px;
     font-weight: 300;
-    margin: 0 0 10px 0;
+    margin: 0 0 16px 0;
 }
 
-.header .lnb_con .left .t ul>li:not(:last-child){
-    
+.header .lnb_con .left .t ul>li:last-child {
+    font-size: 16px;
+    font-weight: 300;
 }
 
 .header .lnb_con .right {
-    padding: 0 0 0 120px;
+    width: calc(100% - 583px);
+    padding: 0 0 0 100px;
 }
-
-/* .header .lnb_con .right .top {
-    margin: 0 0 50px 0;
-} */
 
 .header .lnb_con .right .top {
     margin: 0 0 50px 0;
@@ -179,33 +219,46 @@
 
 .header .lnb_con .right .top ul{
     display: flex;
-    
+    justify-content: flex-start;
 }
 
 .header .lnb_con .right .top ul>li {
+    width: 200px;
     font-size: 20px;
     font-weight: 500;
-    margin: 0 auto 0 0;
 }
 
 .header .lnb_con .right .bottom{
     display: flex;
-    
+    justify-content: flex-start;
 }
 
 .header .lnb_con .right .bottom .b{
-    margin: 0 auto 0 0;
+    width: 200px;
+    
 }
 
 .header .lnb_con .right .bottom .b h2{
     font-size: 20px;
     font-weight: 500;
+    margin: 0 0 20px 0;
 }
 
+.header .lnb_con .right .bottom .b ul>li:not(:last-child) {
+   display: flex;
+   justify-content: flex-start;
+   font-size: 16px;
+    font-weight: 300;
+   margin: 0 0 16px 0;
+}
 
+.header .lnb_con .right .bottom .b ul>li {
+    font-size: 16px;
+    font-weight: 300;
+}
 
 .main_visual .v_img{
-    height: 100vh;
+    height: calc(100vh - 187px);
 }
 
 .main_visual .v_slide .v01 {
@@ -226,4 +279,29 @@
 
 .main_visual .v_slide .v05 {
     background: url(../imges/mv_05.jpg)no-repeat center center/cover;
+}
+
+.main_visual .v_slide .slick-dots {
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translate(0, 0);
+}
+
+.main_visual .v_slide .slick-dots>li {
+    display: inline-block;
+   padding: 10px 0;
+}
+
+.main_visual .v_slide .slick-dots>li button {
+    width: 15px;
+    height: 15px;
+    background: #369;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 10px;
+
+    border: none;
+    outline: none;
+    font-size: 0;
 }
