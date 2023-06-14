@@ -28,5 +28,14 @@ $(function () {
         slidesToShow: 5,
         arrows: false,
         infinite: true,
+        fade: false,
     })
+
+    $('.main_product .btn .prev').on('click', function () {
+        $('.p_slide').slick('slickPrev')
+    })
+    $('.main_product .btn .next').on('click', function () {
+        $('.p_slide').slick('slickNext')
+    })
+
 })
