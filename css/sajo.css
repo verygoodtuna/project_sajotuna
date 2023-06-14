@@ -1,5 +1,5 @@
 .inner {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -15,7 +15,7 @@
     position: absolute;
     top: 20px;
     left: 50%;
-    transform: translate(0, 0);
+    transform: translate(-50%, 0);
 }
 
 .header .banner_t {
@@ -61,7 +61,7 @@
     gap: 20px;
 }
 
-.header .banner_b ul>li:first-child a::before {
+.header .banner_b .gnb .gnb_i a::before {
     content: "\e91c";
     font-family: xeicon;
     display: block;
@@ -79,7 +79,7 @@
     left: 0; */
 }
 
-.header .banner_b ul>li:first-child a::after {
+.header .banner_b .gnb .gnb_i a::after {
     content: "\e921";
     font-family: xeicon;
     display: none;
@@ -92,14 +92,6 @@
     border-radius: 50%;
     color: #fff;
 
-}
-
-.header .banner_b ul>li:first-child a.on::before {
-    display: none;
-}
-
-.header .banner_b ul>li:first-child a.on::after {
-    display: block;
 }
 
 .header .banner_b .bar {
@@ -164,12 +156,15 @@
 
     background: #fff;
     width: 100%;
+    z-index: 999;
 
-    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .header .lnb_con.on {
-    display: block;
+    opacity: 1;
+    visibility: visible;
 }
 
 .header .lnb_con .box {
@@ -257,8 +252,16 @@
     font-weight: 300;
 }
 
-.main_visual .v_img{
+.main_visual .v_slide {
+    position: relative;
+}
+
+.main_visual .v_slide .v_img {
     height: calc(100vh - 187px);
+    border-radius: 10px;
+    margin: 0 20px;
+
+    
 }
 
 .main_visual .v_slide .v01 {
@@ -281,6 +284,7 @@
     background: url(../imges/mv_05.jpg)no-repeat center center/cover;
 }
 
+
 .main_visual .v_slide .slick-dots {
     position: absolute;
     bottom: -45px;
@@ -296,7 +300,7 @@
 .main_visual .v_slide .slick-dots>li button {
     width: 15px;
     height: 15px;
-    background: #369;
+    background: #002e6a;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 10px;
@@ -304,4 +308,51 @@
     border: none;
     outline: none;
     font-size: 0;
+}
+
+.main_visual .v_slide .slick-dots>li.slick-active button {
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border: 3px solid #002e6a;
+}
+
+.main_visual .btn {
+    display: flex;
+    
+    max-width: 1400px;
+}
+
+.main_visual .btn i {
+    background: #002e6a;
+    border-radius: 50%;
+    color: #fff;
+    padding: 20px;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main_visual .btn .prev {
+    left: 10px;
+}
+
+/* .main_visual .btn .prev {
+    position: absolute;
+    top: 50%;
+    right: 85%;
+    transform: translate(-50%, -50%);
+}
+
+.main_visual .btn .next {
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+} */
+
+.main_product {
+    padding: 100px 0;
 }
