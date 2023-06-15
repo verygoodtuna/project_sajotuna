@@ -1,9 +1,16 @@
 $(function () {
-
-    $('.header .banner_b .gnb').on('click', function () {
-        $('.header .lnb_con').addClass('on')
+    $(window).on('scroll', function(){
+        let sct = $(window).scrollTop();
+        if(sct>0) { 
+            $('.header').addClass('on')
+        } else {
+            $('.header').removeClass('on')
+        }
     })
 
+    $('.gnb .gnb_i').on('click', function () {
+        $('.lnb_con').toggleClass('on')
+    })
 
     $('.v_slide').slick ({
         arrows: false,
