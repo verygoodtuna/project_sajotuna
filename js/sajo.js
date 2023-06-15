@@ -11,7 +11,7 @@ $(function () {
         slidesToShow: 1,
         infinite: true,
         centerMode: true,
-        centerPadding: '250px',
+        centerPadding: '150px',
 
     })
 
